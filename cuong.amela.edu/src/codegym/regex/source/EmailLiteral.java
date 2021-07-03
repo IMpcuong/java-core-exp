@@ -14,8 +14,8 @@ public class EmailLiteral {
         pattern = Pattern.compile(EMAIL_REGEX);
     }
 
-    public boolean validateEmail(String regex) {
-        matcher = pattern.matcher(regex);
+    public boolean validateEmail(String email) {
+        matcher = pattern.matcher(email);
         return matcher.matches();
     }
 }
