@@ -1,7 +1,7 @@
 package codegym.abstraction;
 
 public class Shape {
-    private String color = "green";
+    private String color = "Green";
     private boolean filled = true;
 
     public Shape() {
