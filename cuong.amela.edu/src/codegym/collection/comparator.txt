@@ -1,0 +1,3 @@
+Sử dụng Comparable khi có một so sánh mặc định cho đối tượng của bạn.
+Sử dụng Comparator khi bạn cần làm việc xung quanh một so sánh compareTo() hiện có hoặc khi bạn cần sử dụng logic cụ thể theo cách linh hoạt hơn.
+Comparator tách logic sắp xếp khỏi đối tượng của bạn và chứa compareTo() logic trong phương thức sort () của bạn.
