@@ -77,9 +77,9 @@ public class MyList<E> {
         size = 0;
     }
 
-    public boolean contains(E element){
-        for (int i = 0; i < size; i++){
-            if (element == elements[i]){
+    public boolean contains(E element) {
+        for (int i = 0; i < size; i++) {
+            if (element == elements[i]) {
                 return true;
             }
         }
@@ -87,9 +87,9 @@ public class MyList<E> {
     }
 
     public int indexOf(E element) {
-        if (contains(element)){
-            for (int i = 0; i < size; i++){
-                if(elements[i] == element){
+        if (contains(element)) {
+            for (int i = 0; i < size; i++) {
+                if(elements[i] == element) {
                     return i;
                 }
             }
