@@ -1,6 +1,6 @@
 package codegym.collection.source;
 
-public class MyLinkedList {
+public class MyLinkedList<E> {
 
     private class Node {
         private Node nextNode;
@@ -26,7 +26,7 @@ public class MyLinkedList {
     }
 
     //Start from index 0
-    public void addNode(int index, Object data) {
+    public void addNode(int index, E data) {
         Node tempNode = headNode;
         Node holder; //node we want to add data to index i - 1 from index 0
 
@@ -40,10 +40,20 @@ public class MyLinkedList {
         numNodes++;
     }
 
-    public void addFirst(Object data) {
+    public void addFirst(E data) {
         Node temp = headNode;
         headNode = new Node(data);
         headNode.nextNode = temp;
+        numNodes++;
+    }
+
+    public void addLast(E data) {
+        Node temp = headNode;
+        while (temp.nextNode != null) {
+            temp = temp.nextNode;
+        }
+        temp.nextNode = new Node(data);
+        temp.nextNode.nextNode = null;
         numNodes++;
     }
 
@@ -53,6 +63,68 @@ public class MyLinkedList {
             tempNode = tempNode.nextNode;
         }
         return tempNode;
+    }
+
+    public E remove(int index) {
+        E rm_element = null;
+        Node temp = headNode;
+        Node previous = headNode;
+        for(int i = 0; i < index; i++) {
+            previous = temp;
+            temp = temp.nextNode;
+        }
+        rm_element = (E) temp.getData();
+        previous.nextNode = temp.nextNode;
+        numNodes--;
+        return rm_element;
+    }
+
+    public boolean remove(E e) {
+        boolean result = false;
+        Node temp = headNode;
+        Node previous = headNode;
+        while(temp.nextNode != null){
+            if(temp.getData() == e){
+                if(temp == headNode){
+                    headNode = temp.nextNode;
+                } else {
+                    previous.nextNode = temp.nextNode;
+                }
+                numNodes--;
+                result = true;
+                break;
+            }
+            previous = temp;
+            temp = temp.nextNode;
+        }
+        return result;
+    }
+
+    public int size() {
+        return numNodes;
+    }
+
+    public boolean contains(E o)  {
+        Node temp = headNode;
+        while(temp.nextNode != null) {
+            if(temp.getData() == o) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int indexOf(E o) {
+        Node temp = headNode;
+        if(contains(o)){
+            for(int i = 0; i < numNodes; i++) {
+                if(temp.getData() == o) {
+                    return i;
+                }
+                temp = temp.nextNode;
+            }
+        }
+        return -1;
     }
 
     public void printList() {

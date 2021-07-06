@@ -15,5 +15,10 @@ public class MyLinkedListTest {
         linkedList.addNode(4,9);
         linkedList.addNode(4,9);
         linkedList.printList();
+
+        linkedList.remove(3);
+        linkedList.remove(1);
+        System.out.println("After remove");
+        linkedList.printList();
     }
 }
