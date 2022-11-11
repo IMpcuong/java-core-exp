@@ -1,15 +1,16 @@
 package codegym.refactor.source;
 
 public class TennisGame {
-    //Constants using in the tennis game:
+    // Constants using in the tennis game:
     public static final int BEGIN_SCORE = 0;
-    //Score both:
+    
+    // Score both:
     public static final String ALL_ZERO_POINT = "Love-All";
     public static final String ALL_ONE_POINT = "Fifteen-All";
     public static final String ALL_TWO_POINT = "Thirty-All";
     public static final String ALL_THREE_POINT = "Forty-All";
 
-    //Score individual:
+    // Score individual:
     public static final String ZERO_POINT = "Love";
     public static final String ONE_POINT = "Fifteen";
     public static final String TWO_POINT = "Thirty";
@@ -27,7 +28,7 @@ public class TennisGame {
     public static final String WINNER_1 = "Win for player1";
     public static final String WINNER_2 = "Win for player2";
 
-    //Getting deuce score:
+    // Getting deuce score:
     public static String getDeuceScore(int score_player1, int score_player2) {
         String score = "";
         if (score_player1 == score_player2) {
@@ -52,7 +53,7 @@ public class TennisGame {
         return score;
     }
 
-    //Getting individual score:
+    // Getting individual score:
     public static String getIndividualScore(int score_player1, int score_player2, String score) {
         int tempScore = 0;
         for (int i = 1; i < 3; i++) {
@@ -79,10 +80,11 @@ public class TennisGame {
         return score;
     }
 
-    //Get final score:
+    // Get final score:
     public static String getScore(String player_name1, String player_name2, int score_player1, int score_player2) {
         String score = "";
         int tempScore = BEGIN_SCORE;
+        
         if (score_player1 == score_player2) {
             score = getDeuceScore(score_player1, score_player2);
         } else if (score_player1 >= 4 || score_player2 >= 4) {
@@ -93,7 +95,7 @@ public class TennisGame {
         return score;
     }
 
-    //Finding the winner:
+    // Finding the winner:
     public static String getWinnerOrDeuce(int score_player1, int score_player2) {
         String result = "";
         if (score_player1 >= 4 || score_player2 >= 4) {
