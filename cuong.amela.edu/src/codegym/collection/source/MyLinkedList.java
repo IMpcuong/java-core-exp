@@ -30,7 +30,7 @@ public class MyLinkedList<E> {
         Node tempNode = headNode;
         Node holder; // NOTE: node we want to add data to index i - 1 from index 0.
 
-        //assign tempNode -> (index - 2)
+        // NOTE: assign tempNode -> (index - 2)
         for (int i = 0; i < index - 1 && tempNode.nextNode != null; i++) {
             tempNode = tempNode.nextNode;
         }
@@ -62,6 +62,7 @@ public class MyLinkedList<E> {
         for (int i = 0; i < index; i++) {
             tempNode = tempNode.nextNode;
         }
+        
         return tempNode;
     }
 
@@ -69,13 +70,15 @@ public class MyLinkedList<E> {
         E rm_element = null;
         Node temp = headNode;
         Node previous = headNode;
-        for(int i = 0; i < index; i++) {
+        
+        for (int i = 0; i < index; i++) {
             previous = temp;
             temp = temp.nextNode;
         }
         rm_element = (E) temp.getData();
         previous.nextNode = temp.nextNode;
         numNodes--;
+        
         return rm_element;
     }
 
@@ -83,9 +86,10 @@ public class MyLinkedList<E> {
         boolean result = false;
         Node temp = headNode;
         Node previous = headNode;
-        while(temp.nextNode != null){
-            if(temp.getData() == e){
-                if(temp == headNode){
+        
+        while (temp.nextNode != null) {
+            if (temp.getData() == e) {
+                if (temp == headNode) {
                     headNode = temp.nextNode;
                 } else {
                     previous.nextNode = temp.nextNode;
@@ -97,6 +101,7 @@ public class MyLinkedList<E> {
             previous = temp;
             temp = temp.nextNode;
         }
+        
         return result;
     }
 
@@ -106,24 +111,26 @@ public class MyLinkedList<E> {
 
     public boolean contains(E o)  {
         Node temp = headNode;
-        while(temp.nextNode != null) {
-            if(temp.getData() == o) {
+        while (temp.nextNode != null) {
+            if (temp.getData() == o) {
                 return true;
             }
         }
+        
         return false;
     }
 
     public int indexOf(E o) {
         Node temp = headNode;
-        if(contains(o)){
-            for(int i = 0; i < numNodes; i++) {
-                if(temp.getData() == o) {
+        if (contains(o)) {
+            for (int i = 0; i < numNodes; i++) {
+                if (temp.getData() == o) {
                     return i;
                 }
                 temp = temp.nextNode;
             }
         }
+        
         return -1;
     }
 
