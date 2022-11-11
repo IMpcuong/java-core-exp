@@ -16,8 +16,10 @@ public class ExampleOfComparator {
         characters.add(homer);
         characters.add(moe);
 
-        Collections.sort(characters, (Comparator.<SimpsonCharacter>
-                comparingInt(character1 -> character1.name.length())
+        // NOTE: This pattern was inspired for Rust's type-casting convention (my thought).
+        // Exp: (in Rust)
+        // `let num: f32 = f32::NAN.to_int_unchecked::<u8>()`
+        Collections.sort(characters, (Comparator.<SimpsonCharacter>comparingInt(character1 -> character1.name.length())
                 .thenComparingInt(character2 -> character2.name.length())));
 
         System.out.println(characters);
