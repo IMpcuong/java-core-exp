@@ -16,17 +16,18 @@ public class LinkedListQueue {
             this.head = this.tail = temp;
             return;
         }
+        
         this.tail.next = temp;
         this.tail = temp;
     }
 
     public Node dequeue() {
-        if (this.head == null)
-            return null;
-        Node temp = this.head;
+        if (this.head == null) return null;
+        
+        Node curNode = this.head;
         this.head = this.head.next;
-        if (this.head == null)
-            this.tail = null;
-        return temp;
+        if (this.head == null) this.tail = null;
+        
+        return curNode;
     }
 }
