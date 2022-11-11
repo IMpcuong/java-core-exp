@@ -24,13 +24,13 @@ public class MyList<E> {
         return this.size;
     }
 
-    //Adding new object to last position of array
+    // Adding new object to last position of array.
     public void addElement(E element) {
         if (size == elements.length) ensureCapacity(size + 1);
         elements[size++] = element;
     }
 
-    //Adding new object to last position of array
+    // Adding new object to last position of array.
     public boolean add(E element) {
         if (size == elements.length) {
             ensureCapacity(size + 1);
