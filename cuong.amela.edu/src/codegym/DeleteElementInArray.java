@@ -13,13 +13,13 @@ public class DeleteElementInArray {
         int countIndex = 0;
         int[] indexArray;
         for (int i = 0; i < size; i++) {
-            if(array[i] == number) {
+            if (array[i] == number) {
                 countIndex++;
             }
         }
         indexArray = new int[countIndex];
         for (int i = 0, j = 0; i < size; i++) {
-            if(array[i] == number) {
+            if (array[i] == number) {
                 indexArray[j++] = i;
             }
         }
@@ -37,8 +37,6 @@ public class DeleteElementInArray {
         return arrayList.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    //public static int[] removeElement() {}
-
     public static void main(String[] args) {
         int[] array = {2,3,4,3,5,6,3,2};
         int size = array.length;
@@ -47,23 +45,21 @@ public class DeleteElementInArray {
         int number = scan.nextInt();
 
         System.out.print("The ordinary array:\t");
-        for(int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + "\t");
         }
         System.out.println();
 
         int[] indexArray = indexOfNumberInArray(number, array);
         System.out.print("The index of number we want to remove inside the array:\t");
-        for(int i = 0; i < indexArray.length; i++) {
+        for (int i = 0; i < indexArray.length; i++) {
             System.out.print(indexArray[i] + "\t");
         }
         System.out.println();
 
-        //System.out.println(indexArray[0]);
-
-        //array = deleteElementsInArray(indexArray[0], array);
-        //array = deleteElementsInArray(indexArray[1], array);
-        //array = deleteElementsInArray(indexArray[2], array);
+        // array = deleteElementsInArray(indexArray[0], array);
+        // array = deleteElementsInArray(indexArray[1], array);
+        // array = deleteElementsInArray(indexArray[2], array);
 
         for (int i = 0, j = 0; i < size; i++) {
             if (array[i] == number) {
