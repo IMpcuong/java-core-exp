@@ -24,7 +24,7 @@ public class ProductManager extends Product {
     }
 
     public List<Product> deleteProductById(String id) {
-        for(Product product : listProduct) {
+        for (Product product : listProduct) {
             if (product.getId().equals(id)) {
                 listProduct.remove(product);
                 System.out.println("Delete successful!");
@@ -32,24 +32,28 @@ public class ProductManager extends Product {
                 System.out.println("Our list of products is not contains this product!");
             }
         }
+        
         return listProduct;
     }
 
     public List<Product> changePropertyProductById(String id) {
-        for(Product product : listProduct) {
+        for (Product product : listProduct) {
             if (product.getId().equals(id)) {
                 System.out.print("Input your product price: ");
                 int price = Integer.parseInt(scanner.nextLine());
+                
                 System.out.print("Input your product name: ");
                 String name = scanner.nextLine();
+                
                 Product newProduct = new Product(id, name, price);
                 Collections.replaceAll(listProduct, product, newProduct);
-                System.out.printf("Change old product %s with new product %s.\n",
-                        product.getName(), newProduct.getName());
+                
+                System.out.printf("Change old product %s with new product %s.\n", product.getName(), newProduct.getName());
             } else {
                 System.out.println("Our list of products is not contains this product!");
             }
         }
+        
         return listProduct;
     }
 
@@ -63,8 +67,8 @@ public class ProductManager extends Product {
     }
 
     public void sortingWithListProduct() {
-        Collections.sort(listProduct, (Comparator.<Product>
-                comparingDouble(product1 -> product1.getPrice()).thenComparingDouble(product2 -> product2.getPrice())));
+        Collections.sort(listProduct, (Comparator.<Product>comparingDouble(product1 -> product1.getPrice())
+                                .thenComparingDouble(product2 -> product2.getPrice())));
     }
 
     public void printListProduct() {
