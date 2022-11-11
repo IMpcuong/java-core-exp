@@ -7,16 +7,15 @@ import java.io.InputStreamReader;
 public class ReverseTest {
 
     public static void main(String[] args) throws IOException {
-        String input, output;
-        while(true){
+        String input;
+        String output;
+        
+        while (true) {
             System.out.print("Enter a string: ");
             System.out.flush();
 
             input = getString();
-
-            if(input.equals("")){
-                break;
-            }
+            if (input.equals("")) break;
 
             Reverse reverse = new Reverse(input);
             output = reverse.doReverse();
