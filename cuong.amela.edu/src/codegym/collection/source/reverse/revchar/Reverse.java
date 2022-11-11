@@ -5,22 +5,21 @@ import codegym.collection.source.*;
 public class Reverse{
 
     private String in;
-    private String out;
 
     public Reverse(String in){
         this.in = in;
     }
 
-    public String doReverse(){
+    public String doReverse() {
+        String out;
         GenericStack<Character> stack = new GenericStack<Character>();
 
-        for(int i = 0; i < in.length(); i++){
+        for (int i = 0; i < in.length(); i++) {
             stack.push(in.charAt(i));
         }
 
         out = "";
-
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             char ch = stack.pop();
             out += ch;
         }
