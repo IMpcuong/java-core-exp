@@ -9,7 +9,8 @@ public class ReverseTest {
     public static void main(String[] args) throws IOException{
         int input;
         int output;
-        while(true){
+        
+        while (true) {
             System.out.print("Enter a number: ");
             System.out.flush();
 
