@@ -20,16 +20,6 @@ public class ConcatArray {
     }
 
     public static int[] concatArray(int[]... arrays) {
-        //int size1 = array1.length, size2 = array2.length;
-        /*
-        int[] mergeArray = new int[size1 + size2];
-        for (int i = 0; i < size1; ++i) {
-        mergeArray[i] = array1[i];
-        for (int j = size1 + 1; j < mergeArray.length; ++j) {
-        mergeArray[j] = array2[j];
-        }
-        }
-        */
         int length = 0;
         for (int[] array : arrays) {
             length += array.length;
@@ -51,6 +41,7 @@ public class ConcatArray {
 
         System.out.println("Input your first array!");
         inputArray(array1);
+        
         System.out.println("Input your second array!");
         inputArray(array2);
 
