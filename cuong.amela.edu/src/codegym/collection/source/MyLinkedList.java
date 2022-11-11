@@ -25,18 +25,18 @@ public class MyLinkedList<E> {
         headNode = new Node(data);
     }
 
-    //Start from index 0
+    // NOTE: Start from index `0` (as a newbie, this was a huge discovery for me).
     public void addNode(int index, E data) {
         Node tempNode = headNode;
-        Node holder; //node we want to add data to index i - 1 from index 0
+        Node holder; // NOTE: node we want to add data to index i - 1 from index 0.
 
         //assign tempNode -> (index - 2)
         for (int i = 0; i < index - 1 && tempNode.nextNode != null; i++) {
             tempNode = tempNode.nextNode;
         }
-        holder = tempNode.nextNode; //places in (index - 2), assign (node i - 1) to holder (node)
-        tempNode.nextNode = new Node(data); //assign data to (node i - 1) = holder (node)
-        tempNode.nextNode.nextNode = holder; //assign holder (node) to (node i) (next node)
+        holder = tempNode.nextNode; // NOTE: places in (index - 2), assign (node i - 1) to holder (node).
+        tempNode.nextNode = new Node(data); // assign data to (node i - 1) = holder (node).
+        tempNode.nextNode.nextNode = holder; // assign holder (node) to (node i) (next node).
         numNodes++;
     }
 
